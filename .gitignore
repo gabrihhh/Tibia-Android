@@ -22,3 +22,9 @@ proto/tests/stattest
 
 # proot/talloc do Termux (binários de terceiros)
 proto/device/bin/
+
+# Saídas de build do APK e cópia local do rootfs
+android/build/
+android/assets/runtime.tar.gz
+proto/runtime-src/
+proto/tests/sigsysprobe

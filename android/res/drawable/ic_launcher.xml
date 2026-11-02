@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ícone genérico: espada sobre fundo escuro -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#2B2118" android:pathData="M54,4a50,50 0,1 1,0 100a50,50 0,1 1,0 -100z" />
+    <path android:fillColor="#D9D2C3" android:pathData="M72,22 L80,22 L80,30 L50,60 L42,52 Z" />
+    <path android:fillColor="#B8862E" android:pathData="M36,50 L44,50 L58,64 L58,72 L50,72 L36,58 Z" />
+    <path android:fillColor="#7A5321" android:pathData="M42,64 L48,70 L36,82 L30,76 Z" />
+</vector>

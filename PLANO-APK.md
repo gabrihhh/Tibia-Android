@@ -113,6 +113,24 @@ funcionou**. Novo objetivo: um **APK próprio** que, ao tocar no ícone, abre o
       Ajustes rápidos ativos: X em 1600×1000, FPS 30, luzes e auto-screenshots desligados.
       (RADV direto não funciona: o kernel usa o driver `sgpu`, não `amdgpu`; a ponte
       bionic-vulkan-wrapper é bionic e não carrega no processo glibc.)
+- [x] **Marco 2026-11-02: APK `Tibia Droid` (`android/`) sobe o jogo sem PC.**
+      Build: `tools/build-runtime.py` (runtime mínimo, 109 MB: libs que o cliente usa +
+      dependências, Python para o atualizador, virgl/ANGLE, certificados) e
+      `tools/build-apk.sh` (Java + aapt2/d8/apksigner, sem Gradle). O app extrai o
+      runtime em `files/rt`, baixa/atualiza o cliente pela CDN e roda tudo num serviço
+      em primeiro plano (sem ele o Android corta a rede e congela os processos).
+      Obstáculos que só aparecem dentro de um app (pelo adb não existiam):
+      - seccomp mata glibc com SIGSYS: `set_robust_list` (99) e `rseq` (293) são
+        neutralizadas no binário (`svc #0` → `movn x0,#37` = -ENOSYS) no loader e na
+        libc; `libseccompfix.so` trata as demais (ex.: `shmget`).
+      - APK do loader do Termux:X11 precisa ser somente-leitura (Android 14+).
+      - o servidor X precisa de TMPDIR gravável; o cliente é redirecionado para o
+        socket abstrato real (`TIBIA_X11_DIR` na libabstractsock).
+      - sem `LD_LIBRARY_PATH` glibc no servidor X (bionic).
+      - `LIBGL_ALWAYS_SOFTWARE=1`: como app, o X entrega a GPU real via DRI3 e o Mesa
+        trava no driver `sgpu`.
+      - heredoc do sh do Android não funciona em app (temporário em /data/local).
+      Requer o app Termux:X11 instalado. Pendente: confirmar a tela no tablet.
 - [ ] **Fase 0 — prova no PC (sem tablet):** container Docker arm64 (qemu) +
       box64 + Xvfb + llvmpipe executando o `bin/client`. Valida se o box64
       roda o cliente e o Qt6. Lento, mas responde "é viável?".
