@@ -1,0 +1,24 @@
+# Arquivos da CipSoft (não redistribuir — o cliente é baixado da CDN oficial)
+proto/Tibia/
+linux-client/
+client/*.exe
+
+# Binários de terceiros e downloads (dá para baixar de novo)
+driver/*.zip
+proto/dl/
+proto/debs-amd64/
+proto/debs-test/
+proto/build/
+proto/debian-trixie-arm64.tar
+
+# Artefatos compilados
+*.so
+proto/tests/condtest
+proto/tests/fstest
+proto/tests/stattest
+
+# Configuração local do Claude Code
+.claude/
+
+# proot/talloc do Termux (binários de terceiros)
+proto/device/bin/

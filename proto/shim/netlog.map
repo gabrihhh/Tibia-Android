@@ -1,0 +1,1 @@
+Qt_6 { global: _ZN9QIODevice7readAllEv; _ZN21QNetworkAccessManager4postERK15QNetworkRequestRK10QByteArray; local: *; };

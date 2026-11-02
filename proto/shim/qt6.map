@@ -1,0 +1,1 @@
+Qt_6 { global: _ZN14QWaitCondition7wakeOneEv; local: *; };

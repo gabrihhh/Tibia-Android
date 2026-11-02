@@ -1,0 +1,6 @@
+GLIBC_2.2.5 { global: pthread_create; sysconf; __sysconf; mkstemp64; open64; unlink; access; local: *; };
+GLIBC_2.4 { global: openat64; unlinkat; } GLIBC_2.2.5;
+GLIBC_2.7 { global: __open64_2; } GLIBC_2.4;
+GLIBC_2.28 { global: statx; } GLIBC_2.7;
+GLIBC_2.33 { global: stat64; lstat64; } GLIBC_2.28;
+GLIBC_2.34 { global: pthread_create; } GLIBC_2.33;
