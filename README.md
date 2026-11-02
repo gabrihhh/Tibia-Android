@@ -9,6 +9,9 @@ Testado no **Samsung Galaxy Tab S10 FE** (Exynos 1580, GPU Xclipse 540, Android 
 > Projeto pessoal, sem relação com a CipSoft. Nenhum arquivo do Tibia é
 > distribuído aqui: o app baixa o cliente direto de `static.tibia.com`.
 
+**Download:** [TibiaDroid.apk (v0.1)](https://github.com/gabrihhh/Tibia-Android/releases/download/v0.1/TibiaDroid.apk)
+· [todas as versões](https://github.com/gabrihhh/Tibia-Android/releases)
+
 ## Como funciona
 
 ```
@@ -36,7 +39,8 @@ Detalhes de cada problema encontrado e de como foi resolvido estão em
 **Instalação**
 
 1. Instale o Termux:X11.
-2. Instale o `TibiaDroid.apk` (gerado como descrito abaixo).
+2. Baixe e instale o [`TibiaDroid.apk`](https://github.com/gabrihhh/Tibia-Android/releases/download/v0.1/TibiaDroid.apk)
+   (permita "instalar de fontes desconhecidas"), ou gere o seu como descrito abaixo.
 3. Toque em **Tibia Droid**. Na primeira vez ele prepara o ambiente (1–2 min) e
    baixa o cliente (~700 MB). Depois o jogo abre no Termux:X11.
 
